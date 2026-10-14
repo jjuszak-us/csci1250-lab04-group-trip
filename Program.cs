@@ -7,9 +7,7 @@
 *              reports on a whole group instead of one person.
 */
 
-Console.WriteLine("===== Part 1:The Trip ======");
-Console.WriteLine("");
-
+//A calculator for fuel cost, pizza cost, and total trip cost
 
 Console.WriteLine("How many miles are you traveling round trip? ");
 double miles = Convert.ToDouble(Console.ReadLine ());
@@ -33,15 +31,15 @@ double priceOfPizza = Convert.ToDouble(Console.ReadLine());
 double pizzaCost = pizzas * priceOfPizza;
 double tripTotal = fuel + pizzaCost;
 
+Console.WriteLine("===== Part 1:The Trip ======");
 Console.WriteLine("Fuel Cost: " +fuel.ToString("C"));
 Console.WriteLine("Pizza Cost: " + pizzaCost.ToString("C"));
 Console.WriteLine("Total Trip Cost: " + tripTotal.ToString("C"));
 
 
-
+//A calculator for the cost per person for the trip
 Console.WriteLine("");
 Console.WriteLine("===== Part 2: The Group ======");
-Console.WriteLine("");
 
 string[] names = {"Ada", "Grace", "Alan", "Katherine"};
 double[] hoursWorked = {22, 15, 30, 18};
@@ -60,7 +58,7 @@ System.Console.WriteLine("Slices each: " + slicesPerPerson);
 System.Console.WriteLine("Cost per person: " +tripPerPerson.ToString("F2"));
 
 
-
+// A calculator for the weekly pay of each attendee and how much they must work to afford the trip
 Console.WriteLine("");
 Console.WriteLine("===== Part 3: Who Works How Long =====");
 
@@ -94,13 +92,26 @@ for(int i =0; i < names.Length; i++)
     Console.WriteLine($"{names[i]}: takes home {pay[i].ToString("C")} for {hoursWorked[i]} hours, {payPerHour[i].ToString("C")}, must work {hoursNeeded[i].ToString("F2")} hours. ");
 } 
 
+double hours = hoursWorked.Sum();
+double totalPay = pay.Sum();
+double longest = hoursNeeded.Max();
 
+Console.WriteLine("");
+System.Console.WriteLine($"Total hours worked: {hours}");
+System.Console.WriteLine($"Total take home pay: {totalPay.ToString("C")}");
+System.Console.WriteLine($"Longest anyone must work: {longest.ToString("F2")}");
+
+
+
+
+//Calculates the total cost of fuel for the trip
 static double fuelCost(double miles, double milesPerGallon, double pricePerGallon)
 {
     double gallons = miles / milesPerGallon;
     return gallons * pricePerGallon;
 }
 
+//Calculates the take gross pay with taxs deducted
 static double takeHomePay(double hoursWorked, double hourlyRate)
 {
     double grossPay = hoursWorked * hourlyRate;
@@ -108,24 +119,8 @@ static double takeHomePay(double hoursWorked, double hourlyRate)
     return grossPay - taxWithheld;
 }
 
+//Calculates a pay rate with taxes taken out
 static double takeHomePayPerHour(double pay, double hoursWorked)
 {
     return pay / hoursWorked;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
