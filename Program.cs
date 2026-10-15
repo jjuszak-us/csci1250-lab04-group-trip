@@ -59,6 +59,7 @@ System.Console.WriteLine("Cost per person: " +tripPerPerson.ToString("F2"));
 
 
 // A calculator for the weekly pay of each attendee and how much they must work to afford the trip
+
 Console.WriteLine("");
 Console.WriteLine("===== Part 3: Who Works How Long =====");
 
@@ -102,7 +103,7 @@ System.Console.WriteLine($"Total take home pay: {totalPay.ToString("C")}");
 System.Console.WriteLine($"Longest anyone must work: {longest.ToString("F2")}");
 
 
-
+//METHODS
 
 //Calculates the total cost of fuel for the trip
 static double fuelCost(double miles, double milesPerGallon, double pricePerGallon)
