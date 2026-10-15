@@ -49,13 +49,15 @@ int numberGoing = names.Length;
 
 const double SLICES_PER_PIZZA = 8.0;
 
-double slicesPerPerson = ((pizzas / SLICES_PER_PIZZA) / numberGoing);
+double totalSlices = pizzas * SLICES_PER_PIZZA;
+
+double slicesPerPerson = ((pizzas * SLICES_PER_PIZZA) / numberGoing);
 
 double tripPerPerson = tripTotal / numberGoing;
 
 System.Console.WriteLine("People going: " + names.Length);
 System.Console.WriteLine("Slices each: " + slicesPerPerson);
-System.Console.WriteLine("Cost per person: " +tripPerPerson.ToString("F2"));
+System.Console.WriteLine("Cost per person: " +tripPerPerson.ToString("C"));
 
 
 // A calculator for the weekly pay of each attendee and how much they must work to afford the trip
